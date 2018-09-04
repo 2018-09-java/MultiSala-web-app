@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 4-set-2018, 11.47.30
+    Author     : Aincy
+*/
+
+*{
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.page-heading{
+    font-size: 16pt;
+    text-align: center;
+}
+
+.cinema-panel{
+    display: table;
+    width: 100%;
+    
+}
+
+.cinema-panel-row{
+    display: table-row;
+    
+}
+
+.cinema-panel-cell{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.locandina{
+    width: 200px;
+    
+}
