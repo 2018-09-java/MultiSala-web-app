@@ -4,37 +4,52 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 4-set-2018, 11.47.30
-    Author     : Aincy
+    Created on : 4-set-2018, 11.46.58
+    Author     : ultra
 */
 
-*{
+* {
     font-family: Arial, Helvetica, sans-serif
 }
 
-.page-heading{
-    font-size: 16pt;
+.page-heading {
+    font-size: 24pt;
     text-align: center;
 }
 
-.cinema-panel{
-    display: table;
-    width: 100%;
+.cinema-panel {
     
+  display: grid;
+  grid-template-columns: auto auto;  
+  padding: 10px;
+  grid-row-gap: 50px;
+}
+    
+   
+    
+
+
+.cinema-panel-item {
+    display: grid-item;
+    
+    
+    
+     
 }
 
-.cinema-panel-row{
-    display: table-row;
-    
-}
-
-.cinema-panel-cell{
+.cinema-panel-cell {
     display: table-cell;
     vertical-align: middle;
     padding: 5px;
-}
-
-.locandina{
-    width: 200px;
     
 }
+
+.film-template {
+    width: 200px;
+    float: left;
+}
+
+.film-description {
+    padding: 10px;
+}
+
