@@ -18,9 +18,9 @@ public class Film {
     private String cast;
     private int durata;
     private LocalDate dataUscita;
-    
-    private Film(){
-        
+
+    private Film() {
+
     }
 
     public String getTitle() {
@@ -42,17 +42,14 @@ public class Film {
     public LocalDate getDataUscita() {
         return dataUscita;
     }
-    
-    
-    
 
-    
     public static class Builder {
-    private String title = "";
-    private String genere = "Unknown";
-    private String cast = "Unknown";
-    private int durata = 0;
-    private LocalDate dataUscita = LocalDate.now();
+
+        private String title = "";
+        private String genere = "Unknown";
+        private String cast = "Unknown";
+        private int durata = 0;
+        private LocalDate dataUscita = LocalDate.now();
 
         public Builder setTitle(String title) {
             this.title = title;
@@ -78,7 +75,7 @@ public class Film {
             this.dataUscita = dataUscita;
             return this;
         }
-    
+
         public Film build() {
             if (this.title.isEmpty()) {
                 throw new IllegalArgumentException("Film title is not set. Please set it.");
@@ -94,11 +91,11 @@ public class Film {
             film.title = this.title;
             film.genere = this.genere;
             film.cast = this.cast;
-            film.durata= this.durata;
+            film.durata = this.durata;
             film.dataUscita = this.dataUscita;
             return film;
         }
-    
-}
+
+    }
 
 }

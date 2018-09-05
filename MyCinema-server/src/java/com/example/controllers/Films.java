@@ -37,23 +37,45 @@ public class Films extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            JSONObject obj = new JSONObject();
+            JSONObject rootObj = new JSONObject();
+
+            List<Film> films = new ArrayList();
             try {
                 Film film = new Film.Builder()
                         .setTitle("Mission Impossible")
                         .setGenere("Azione")
                         .setCast("Tom Cruise")
                         .build();
-                obj.put("title", film.getTitle());
-                obj.put("genere", film.getGenere());
-                obj.put("durata", film.getDurata());
-                obj.put("cast", film.getCast());
-                obj.put("dataUscita", film.getDataUscita());
-                out.print(obj);
+                films.add(film);
+                film = new Film.Builder()
+                        .setTitle("Gli Incredibili 2")
+                        .setGenere("Animazione")
+                        .setCast("Bebe Vio")
+                        .build();
+                films.add(film);
+
             } catch (IllegalArgumentException e) {
                 response.setStatus(500);
             }
+            
+            JSONArray jsonArray = new JSONArray();
 
+            films.forEach(
+                    f -> {
+                        JSONObject filmJson = new JSONObject();
+                        filmJson.put("code", f.getTitle());
+                        filmJson.put("from", f.getGenere());
+                        filmJson.put("to", f.getCast());
+                        filmJson.put("durata", f.getDurata());
+                        filmJson.put("dataUscita", f.getDataUscita());
+                        jsonArray.put(filmJson);
+                    }
+            );
+
+            rootObj.put("flights", jsonArray);
+
+            out.print(rootObj);
+            
         }
     }
 

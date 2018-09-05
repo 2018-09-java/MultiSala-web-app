@@ -16,20 +16,18 @@ import static org.junit.Assert.*;
  * @author ultra
  */
 public class FilmTest {
-    
+
     public FilmTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
 
-    
-    
     @Test
     public void testBuilderOK() {
         System.out.println("testBuilderOK");
@@ -56,7 +54,6 @@ public class FilmTest {
         }
     }
 
-   
     @Test
     public void testBuilderGenereCast1() {
         System.out.println("testBuilderGenereCast1");
@@ -101,22 +98,22 @@ public class FilmTest {
         } catch (IllegalArgumentException e) {
             fail("Attributes From and To are both set.");
         }
-        
-        
+
     }
-     @Test
+
+    @Test
     public void testBuilderDate() {
         System.out.println("testBuilderGenereCast3");
         try {
             Film film = new Film.Builder()
                     .setTitle("Mission Impossible")
                     .setGenere("Rome")
-                    .setCast("Munich")                    
+                    .setCast("Munich")
                     .build();
-            assertEquals(LocalDate.now(), film.getDataUscita() );
+            assertEquals(LocalDate.now(), film.getDataUscita());
         } catch (IllegalArgumentException e) {
             fail(e.getMessage());
         }
     }
-    
+
 }
