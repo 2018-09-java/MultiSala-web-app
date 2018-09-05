@@ -53,8 +53,7 @@ public class Films extends HttpServlet {
             } catch (IllegalArgumentException e) {
                 response.setStatus(500);
             }
-            
-           
+
         }
     }
 
