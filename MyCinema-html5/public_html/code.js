@@ -8,7 +8,7 @@
 
 var code = {
     init: function() {
-    $.get("https://api.github.com/users/2018-09-java")
+    $.get("http://localhost:9090/MyCinema-server/films")
         .done(code.onGetSuccesYeah)
         .fail(code.onErrorBoooh);
 },
