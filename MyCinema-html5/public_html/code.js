@@ -31,9 +31,9 @@ var code = {
                         <span><strong>Cast:</strong>` + f.cast + `</span><br>
                         <span><strong>Durata:</strong>` + f.durata + `</span><br>
                         <span><strong>Data Uscita:</strong>` + f.dataUscita + `</span><br></p>
-                    <p><span>Data: 04-09-2018</span><br>
-                        <span>Sala: 5      Posti: 190</span><br>
-                        <span>19:00    21:00   23:00</span>
+                    <p><span>Data:`+f.data+`</span><br>
+                        <span>Sala:`+f.sala+`      Posti: `+f.posti+`</span><br>
+                        <span>`+f.orario+`</span>
                     </p>
                 </div>
             </div>`;
