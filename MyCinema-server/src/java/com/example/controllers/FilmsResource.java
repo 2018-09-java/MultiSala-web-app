@@ -63,7 +63,7 @@ public class FilmsResource {
                     .setData(LocalDate.now())
                     .setSala(5)
                     .setPosti(190)
-                    .setOrari("19:00  21:00  22:30")
+                    .setOrario("19:00  21:00  22:30")
                     .build();
             films.add(film);
             film = new Film.Builder()
@@ -76,7 +76,7 @@ public class FilmsResource {
                     .setData(LocalDate.now())
                     .setSala(2)
                     .setPosti(170)
-                    .setOrari("16:00  19:00  21:00")
+                    .setOrario("16:00  19:00  21:00")
                     .build();
             films.add(film);
             film = new Film.Builder()
@@ -89,7 +89,7 @@ public class FilmsResource {
                     .setData(LocalDate.now())
                     .setSala(1)
                     .setPosti(150)
-                    .setOrari("19:00  21:00  22:30")
+                    .setOrario("19:00  21:00  22:30")
                     .build();
             films.add(film);
             film = new Film.Builder()
@@ -102,7 +102,7 @@ public class FilmsResource {
                     .setData(LocalDate.now())
                     .setSala(3)
                     .setPosti(150)
-                    .setOrari("19:00  21:00  22:30")
+                    .setOrario("19:00  21:00  22:30")
                     .build();
             films.add(film);
         } catch (IllegalArgumentException e) {

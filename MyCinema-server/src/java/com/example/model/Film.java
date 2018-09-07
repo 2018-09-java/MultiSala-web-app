@@ -19,6 +19,12 @@ public class Film {
     private int durata;
     private LocalDate dataUscita;
     private String imgUrl;
+    private LocalDate data;
+    private int sala;
+    private int posti;
+    private String orario;
+    
+    
 
     private Film() {
 
@@ -26,6 +32,22 @@ public class Film {
 
     public String getImgUrl() {
         return imgUrl;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public int getSala() {
+        return sala;
+    }
+
+    public int getPosti() {
+        return posti;
+    }
+
+    public String getOrario() {
+        return orario;
     }
 
     
@@ -58,13 +80,35 @@ public class Film {
         private int durata = 0;
         private LocalDate dataUscita = LocalDate.now();
         private String imgUrl = "";
+        private LocalDate data = LocalDate.now();
+        private int sala = 0;
+        private int posti = 0;
+        private String orario= "";
 
         public Builder setImgUrl(String imgUrl) {
             this.imgUrl = imgUrl;
             return this;
         }
         
+        public Builder setData(LocalDate data) {
+            this.data = data;
+            return this;
+        }
         
+        public Builder setSala(int sala) {
+            this.sala=sala;
+            return this;
+        }
+        
+        public Builder setPosti(int posti) {
+            this.posti = posti;
+            return this;
+        }
+        
+        public Builder setOrario(String orario) {
+            this.orario = orario;
+            return this;
+        }
 
         public Builder setTitle(String title) {
             this.title = title;
@@ -109,6 +153,10 @@ public class Film {
             film.durata = this.durata;
             film.dataUscita = this.dataUscita;
             film.imgUrl = this.imgUrl;
+            film.data=this.data;
+            film.sala=this.sala;
+            film.posti=this.posti;
+            film.orario=this.orario;
             return film;
         }
 
