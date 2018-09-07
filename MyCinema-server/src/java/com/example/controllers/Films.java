@@ -36,7 +36,7 @@ public class Films extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/json;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             JSONObject rootObj = new JSONObject();
@@ -65,7 +65,7 @@ public class Films extends HttpServlet {
             } catch (IllegalArgumentException e) {
                 throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
             }
-            
+
             JSONArray jsonArray = new JSONArray();
 
             films.forEach(
@@ -83,7 +83,7 @@ public class Films extends HttpServlet {
             rootObj.put("films", jsonArray);
 
             out.print(rootObj);
-            
+
         }
     }
 
