@@ -60,6 +60,10 @@ public class FilmsResource {
                     .setDurata(146)
                     .setDataUscita(LocalDate.of(2018, Month.JULY, 12))
                     .setImgUrl("MissionImpossible.jpg")
+                    .setData(LocalDate.now())
+                    .setSala(5)
+                    .setPosti(190)
+                    .setOrari("19:00  21:00  22:30")
                     .build();
             films.add(film);
             film = new Film.Builder()
@@ -69,6 +73,10 @@ public class FilmsResource {
                     .setDurata(118)
                     .setDataUscita(LocalDate.of(2018, Month.SEPTEMBER, 19))
                     .setImgUrl("GliIncredibili2.jpg")
+                    .setData(LocalDate.now())
+                    .setSala(2)
+                    .setPosti(170)
+                    .setOrari("16:00  19:00  21:00")
                     .build();
             films.add(film);
             film = new Film.Builder()
@@ -78,6 +86,10 @@ public class FilmsResource {
                     .setDurata(113)
                     .setDataUscita(LocalDate.of(2018, Month.AUGUST, 9))
                     .setImgUrl("Shark.jpg")
+                    .setData(LocalDate.now())
+                    .setSala(1)
+                    .setPosti(150)
+                    .setOrari("19:00  21:00  22:30")
                     .build();
             films.add(film);
             film = new Film.Builder()
@@ -87,6 +99,10 @@ public class FilmsResource {
                     .setDurata(118)
                     .setDataUscita(LocalDate.of(2018, Month.JULY, 4))
                     .setImgUrl("Ant-Man.jpg")
+                    .setData(LocalDate.now())
+                    .setSala(3)
+                    .setPosti(150)
+                    .setOrari("19:00  21:00  22:30")
                     .build();
             films.add(film);
         } catch (IllegalArgumentException e) {
@@ -104,6 +120,10 @@ public class FilmsResource {
                     filmJson.put("durata", f.getDurata());
                     filmJson.put("dataUscita", f.getDataUscita());
                     filmJson.put("imgUrl", f.getImgUrl());
+                    filmJson.put("data", f.getData());
+                    filmJson.put("sala", f.getSala());
+                    filmJson.put("posti", f.getPosti());
+                    filmJson.put("orario", f.getOrario());
                     jsonArray.put(filmJson);
                 }
         );
