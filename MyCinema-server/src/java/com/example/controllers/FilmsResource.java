@@ -6,6 +6,8 @@
 package com.example.controllers;
 
 import com.example.model.Film;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ws.rs.core.Context;
@@ -38,7 +40,9 @@ public class FilmsResource {
     }
 
     /**
-     * Retrieves representation of an instance of com.example.controllers.FilmsResource
+     * Retrieves representation of an instance of
+     * com.example.controllers.FilmsResource
+     *
      * @return an instance of java.lang.String
      */
     @GET
@@ -47,42 +51,46 @@ public class FilmsResource {
         JSONObject rootObj = new JSONObject();
 
         List<Film> films = new ArrayList();
-        
-         try {
+
+        try {
             Film film = new Film.Builder()
                     .setTitle("Mission Impossible")
                     .setGenere("Azione")
                     .setCast("Tom Cruise")
+                    .setDurata(146)
+                    .setDataUscita(LocalDate.of(2018, Month.JULY, 12))
                     .build();
             films.add(film);
             film = new Film.Builder()
                     .setTitle("Gli Incredibili 2")
-                        .setGenere("Animazione")
-                        .setCast("Bebe Vio")
-                        .build();
+                    .setGenere("Animazione")
+                    .setCast("Bebe Vio")
+                    .setDataUscita(LocalDate.of(2018, Month.SEPTEMBER, 19))
+                    .build();
             films.add(film);
             film = new Film.Builder()
                     .setTitle("Shark - Il primo squalo")
-                        .setGenere("Azione")
-                        .setCast("Jason Statham")
-                        .build();
+                    .setGenere("Azione")
+                    .setCast("Jason Statham")
+                    .setDataUscita(LocalDate.of(2018, Month.AUGUST, 9))
+                    .build();
             films.add(film);
         } catch (IllegalArgumentException e) {
             throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
         }
-        
-         JSONArray jsonArray = new JSONArray();
+
+        JSONArray jsonArray = new JSONArray();
 
         films.forEach(
                 f -> {
-                        JSONObject filmJson = new JSONObject();
-                        filmJson.put("title", f.getTitle());
-                        filmJson.put("genere", f.getGenere());
-                        filmJson.put("cast", f.getCast());
-                        filmJson.put("durata", f.getDurata());
-                        filmJson.put("dataUscita", f.getDataUscita());
-                        jsonArray.put(filmJson);
-                    }
+                    JSONObject filmJson = new JSONObject();
+                    filmJson.put("title", f.getTitle());
+                    filmJson.put("genere", f.getGenere());
+                    filmJson.put("cast", f.getCast());
+                    filmJson.put("durata", f.getDurata());
+                    filmJson.put("dataUscita", f.getDataUscita());
+                    jsonArray.put(filmJson);
+                }
         );
 
         rootObj.put("films", jsonArray);
@@ -91,6 +99,7 @@ public class FilmsResource {
 
     /**
      * PUT method for updating or creating an instance of FilmsResource
+     *
      * @param content representation for the resource
      */
     @PUT
