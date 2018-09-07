@@ -23,7 +23,7 @@ var code = {
     writeFilmList: function (filmList) {
         for (var f of filmList) {
             var htmlStr = `<div class="cinema-panel-item">
-                <img class="film-template" src="images/MissionImpossible.jpg" alt="film template">
+                <img class="film-template" src="images/`+f.imgUrl+`" alt="film template">
                 <div class="film-description">
                     <p><strong>` + f.title + `</strong></p>
                     <p>

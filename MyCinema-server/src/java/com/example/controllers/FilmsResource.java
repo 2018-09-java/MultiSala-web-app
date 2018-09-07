@@ -59,20 +59,34 @@ public class FilmsResource {
                     .setCast("Tom Cruise")
                     .setDurata(146)
                     .setDataUscita(LocalDate.of(2018, Month.JULY, 12))
+                    .setImgUrl("MissionImpossible.jpg")
                     .build();
             films.add(film);
             film = new Film.Builder()
                     .setTitle("Gli Incredibili 2")
                     .setGenere("Animazione")
                     .setCast("Bebe Vio")
+                    .setDurata(118)
                     .setDataUscita(LocalDate.of(2018, Month.SEPTEMBER, 19))
+                    .setImgUrl("GliIncredibili2.jpg")
                     .build();
             films.add(film);
             film = new Film.Builder()
                     .setTitle("Shark - Il primo squalo")
                     .setGenere("Azione")
                     .setCast("Jason Statham")
+                    .setDurata(113)
                     .setDataUscita(LocalDate.of(2018, Month.AUGUST, 9))
+                    .setImgUrl("Shark.jpg")
+                    .build();
+            films.add(film);
+            film = new Film.Builder()
+                    .setTitle("ANT-MAN and the Wasp")
+                    .setGenere("Azione")
+                    .setCast("Paul Rudd, Judy Greer")
+                    .setDurata(118)
+                    .setDataUscita(LocalDate.of(2018, Month.JULY, 4))
+                    .setImgUrl("Ant-Man.jpg")
                     .build();
             films.add(film);
         } catch (IllegalArgumentException e) {
@@ -89,6 +103,7 @@ public class FilmsResource {
                     filmJson.put("cast", f.getCast());
                     filmJson.put("durata", f.getDurata());
                     filmJson.put("dataUscita", f.getDataUscita());
+                    filmJson.put("imgUrl", f.getImgUrl());
                     jsonArray.put(filmJson);
                 }
         );

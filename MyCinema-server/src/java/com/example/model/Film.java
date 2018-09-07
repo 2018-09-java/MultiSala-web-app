@@ -18,11 +18,18 @@ public class Film {
     private String cast;
     private int durata;
     private LocalDate dataUscita;
+    private String imgUrl;
 
     private Film() {
 
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    
+    
     public String getTitle() {
         return title;
     }
@@ -50,6 +57,14 @@ public class Film {
         private String cast = "Unknown";
         private int durata = 0;
         private LocalDate dataUscita = LocalDate.now();
+        private String imgUrl = "";
+
+        public Builder setImgUrl(String imgUrl) {
+            this.imgUrl = imgUrl;
+            return this;
+        }
+        
+        
 
         public Builder setTitle(String title) {
             this.title = title;
@@ -93,6 +108,7 @@ public class Film {
             film.cast = this.cast;
             film.durata = this.durata;
             film.dataUscita = this.dataUscita;
+            film.imgUrl = this.imgUrl;
             return film;
         }
 
