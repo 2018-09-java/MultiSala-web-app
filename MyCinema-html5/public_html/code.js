@@ -8,7 +8,7 @@
 
 var code = {
     init: function () {
-        $.get("http://localhost:9090/MyCinema-server/films")
+        $.get("http://localhost:9090/MyCinema-server/webresources/films")
                 .done(code.onGetSuccesYeah)
                 .fail(code.onErrorBoooh);
     },
@@ -25,11 +25,11 @@ var code = {
             var htmlStr = `<div class="cinema-panel-item">
                 <img class="film-template" src="images/MissionImpossible.jpg" alt="film template">
                 <div class="film-description">
-                    <p><strong>` + f.Title + `</strong></p>
+                    <p><strong>` + f.title + `</strong></p>
                     <p>
-                        <span><strong>Genere:</strong>` + f.Genere + `</span><br>
-                        <span><strong>Cast:</strong>` + f.Cast + `</span><br>
-                        <span><strong>Durata:</strong>` + f.Durata + `</span><br>
+                        <span><strong>Genere:</strong>` + f.genere + `</span><br>
+                        <span><strong>Cast:</strong>` + f.cast + `</span><br>
+                        <span><strong>Durata:</strong>` + f.durata + `</span><br>
                         <span><strong>Data Uscita:</strong>` + f.dataUscita + `</span><br></p>
                     <p><span>Data: 04-09-2018</span><br>
                         <span>Sala: 5      Posti: 190</span><br>

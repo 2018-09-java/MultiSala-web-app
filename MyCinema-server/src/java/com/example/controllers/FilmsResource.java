@@ -85,7 +85,7 @@ public class FilmsResource {
                     }
         );
 
-        rootObj.put("flights", jsonArray);
+        rootObj.put("films", jsonArray);
         return rootObj.toString();
     }
 
