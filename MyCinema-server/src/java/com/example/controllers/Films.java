@@ -14,6 +14,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.core.Response;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -53,9 +55,15 @@ public class Films extends HttpServlet {
                         .setCast("Bebe Vio")
                         .build();
                 films.add(film);
+                film = new Film.Builder()
+                        .setTitle("Shark - Il primo squalo")
+                        .setGenere("Azione")
+                        .setCast("Jason Statham")
+                        .build();
+                films.add(film);
 
             } catch (IllegalArgumentException e) {
-                response.setStatus(500);
+                throw new WebApplicationException(Response.Status.INTERNAL_SERVER_ERROR);
             }
 
             JSONArray jsonArray = new JSONArray();
@@ -63,16 +71,16 @@ public class Films extends HttpServlet {
             films.forEach(
                     f -> {
                         JSONObject filmJson = new JSONObject();
-                        filmJson.put("code", f.getTitle());
-                        filmJson.put("from", f.getGenere());
-                        filmJson.put("to", f.getCast());
+                        filmJson.put("title", f.getTitle());
+                        filmJson.put("genere", f.getGenere());
+                        filmJson.put("cast", f.getCast());
                         filmJson.put("durata", f.getDurata());
                         filmJson.put("dataUscita", f.getDataUscita());
                         jsonArray.put(filmJson);
                     }
             );
 
-            rootObj.put("flights", jsonArray);
+            rootObj.put("films", jsonArray);
 
             out.print(rootObj);
 
